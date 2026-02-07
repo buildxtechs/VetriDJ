@@ -34,7 +34,7 @@ import {
   ChevronRight,
   Loader2,
 } from 'lucide-react';
-import { createClient } from '@/lib/supabase/client';
+// import { createClient } from '@/lib/supabase/client';
 import { updateBookingStatusAction } from '@/app/actions/booking-actions';
 import { toast } from 'sonner';
 import { services } from '@/lib/data';
@@ -102,7 +102,7 @@ export default function BookingsPage() {
   const [viewMode, setViewMode] = useState<'list' | 'calendar'>('list');
   const [updating, setUpdating] = useState(false);
 
-  const supabase = createClient();
+  // const supabase = createClient();
 
   // const [seeding, setSeeding] = useState(false); // Kept state
 

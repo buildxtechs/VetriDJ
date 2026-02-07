@@ -21,7 +21,7 @@ import {
   DialogTitle,
 } from '@/components/ui/dialog';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { createClient } from '@/lib/supabase/client';
+// import { createClient } from '@/lib/supabase/client';
 
 export default function CrewSchedule() {
   const [currentDate, setCurrentDate] = useState(new Date());
@@ -30,12 +30,13 @@ export default function CrewSchedule() {
   const [events, setEvents] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
-  const supabase = createClient();
+  // const supabase = createClient();
 
   useEffect(() => {
     const fetchSchedule = async () => {
       try {
-        const { data: { user } } = await supabase.auth.getUser();
+        // const { data: { user } } = await supabase.auth.getUser();
+        const user = { id: 'dummy-user-id' }; // Mock user for now since auth is disabled
         if (!user) {
           setLoading(false);
           return;

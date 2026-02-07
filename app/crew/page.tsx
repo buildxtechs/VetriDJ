@@ -17,7 +17,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
-import { createClient } from '@/lib/supabase/client';
+// import { createClient } from '@/lib/supabase/client';
 import { toast } from 'sonner';
 import { MembeeChecklist } from '@/components/dashboard/checklist';
 import { WhatsAppButton } from '@/components/dashboard/whatsapp-button';
@@ -33,12 +33,13 @@ export default function CrewDashboard() {
   });
   const [loading, setLoading] = useState(true);
 
-  const supabase = createClient();
+  // const supabase = createClient();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const { data: { user } } = await supabase.auth.getUser();
+        // const { data: { user } } = await supabase.auth.getUser();
+        const user = { id: 'dummy-user-id' }; // Mock user for now since auth is disabled
 
         if (!user) {
           console.log('No user logged in');
